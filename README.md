@@ -5,20 +5,12 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Windows 10 Pro x64
 
-* System dependencies
+* Docker version 19.03.12
 
-* Configuration
+* ruby 2.6.5p114 (2019-10-01 revision 67812) [x64-mingw32]
 
-* Database creation
+* Rails 6.0.3.2
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ....
+* postgres
