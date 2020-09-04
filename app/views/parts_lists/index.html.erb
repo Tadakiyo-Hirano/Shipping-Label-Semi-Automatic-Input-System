@@ -1,3 +1,10 @@
 <h1>PartsLists#index</h1>
-<% aaa = "http://supportsites.husqvarnagroup.com/epcpxmprint/d01bc79c-a331-46cb-ae2c-a0088adb46b7_JA?cl=ja-JP&market=Japan_HJP_-_JA&marketId={0F23B2DF-4F70-4BAD-9FAC-3324CB4BE3ED}&ipl=1" %>
-<p><%= link_to "346XP NEW EDITION", aaa, target: :_blank %></p>
+
+<p><%= link_to "一覧編集", products_path %></p>
+
+<% @products.each do |product| %>
+  <p>
+    <%= link_to "#{product.name}", product.url, target: :_blank %>
+    <%= product.serial %>
+  </p>
+<% end %>
