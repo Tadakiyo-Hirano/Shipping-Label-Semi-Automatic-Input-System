@@ -62,4 +62,6 @@ Rails.application.configure do
 
   # 上記の(config.file_watcher...)のコードを消して、下記のコードを記述することによって、docker-composeで環境構築する際にRailsのソースコードを修正しても即時反映されるようにする。
   config.reload_classes_only_on_change = false
+
+  config.hosts.clear
 end

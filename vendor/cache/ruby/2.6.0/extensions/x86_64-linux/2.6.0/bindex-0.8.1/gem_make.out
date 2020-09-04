@@ -1,0 +1,15 @@
+current directory: /DockerApp/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/local/bin/ruby -I /usr/local/lib/ruby/2.6.0 -r ./siteconf20200904-1-15v43mm.rb extconf.rb
+creating Makefile
+
+current directory: /DockerApp/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /DockerApp/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /DockerApp/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20200904-1-n88ijs/skiptrace/internal
