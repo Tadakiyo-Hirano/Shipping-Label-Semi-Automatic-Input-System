@@ -1,19 +1,10 @@
 <% provide(:title, '登録') %>
+<% provide(:button_text, '新規登録') %>
+
 <h1>登録</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @product, local: true) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :serial %>
-      <%= f.text_field :serial %>
-
-      <%= f.label :url %>
-      <%= f.text_field :url %>
-
-      <%= f.submit "新規作成" %>
-    <% end %>
+    <%= render 'form' %>
   </div>
 </div>

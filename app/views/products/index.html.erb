@@ -6,6 +6,7 @@
       <%= product.serial %>
       <%= "(登録日:#{product.created_at.strftime("%F")})" %>
       <%= link_to "編集", edit_product_path(product) %>
-      <%= link_to "削除", product_path(product), method: :delete %>
+      <%= link_to "削除", product_path(product), method: :delete,
+                          data: { confirm: "#{product.name}のデータを削除します。"} %>
     </p>
   <% end %>
