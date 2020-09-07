@@ -1,12 +1,32 @@
-<p><%= link_to "登録", new_product_path %></p>
+<div>
+  <%= link_to "登録", new_product_path, class: "btn btn-primary" %>
+  <%= link_to "戻る", parts_lists_path, class: "btn btn-default" %>
+</div>
 
+<table class="table table-responsive table-bordered table-hover">
+  <thead>
+    <tr>
+      <th width="200">型式</th>
+      <th></th>
+      <th width="250">シリアル番号</th>
+      <th>URL</th>
+      <th></th>
+    </tr>
+  </thead>
   <% @products.each do |product| %>
-    <p>
-      <%= link_to "#{product.name}", product.url, target: :_blank %>
-      <%= product.serial %>
-      <%= "(登録日:#{product.created_at.strftime("%F")})" %>
-      <%= link_to "編集", edit_product_path(product) %>
-      <%= link_to "削除", product_path(product), method: :delete,
-                          data: { confirm: "#{product.name}のデータを削除します。"} %>
-    </p>
+    <tbody>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= link_to "編集", edit_product_path(product), class: "btn btn-success" %></td>
+        <td><%= product.serial %></td>
+        <td><%= product.url %></td>
+        <td>
+          <%= link_to "削除", product_path(product),
+                              method: :delete,
+                              data: { confirm: "#{product.name}のデータを削除します。"},
+                              class: "btn btn-danger" %>
+        </td>
+      </tr>
+    </tbody>
   <% end %>
+</table>

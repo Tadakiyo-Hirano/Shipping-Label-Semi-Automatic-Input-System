@@ -6,7 +6,7 @@
   <%= f.text_field :serial, class: "form-control" %>
 
   <%= f.label :url, class: "label-new" %>
-  <%= f.text_field :url, class: "form-control" %>
+  <%= f.text_area :url, class: "form-control", rows: 3 %>
 
   <%= f.submit "#{yield(:button_text)}", class: "btn btn-primary btn-block btn-new"  %>
 <% end %>

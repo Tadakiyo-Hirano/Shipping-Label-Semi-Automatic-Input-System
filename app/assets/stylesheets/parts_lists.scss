@@ -1,3 +1,11 @@
-// Place all the styles related to the parts_lists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+table.parts-list {
+  font-size: 40px;
+  th.parts-list, td.parts-list {
+    border-bottom: solid 3px;
+    height: 150px;
+  }
+}
+
+.fa-file-pdf {
+  color: red;
+}
