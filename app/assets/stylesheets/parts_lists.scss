@@ -9,3 +9,39 @@ table.parts-list {
 .fa-file-pdf {
   color: red;
 }
+
+.search-form {
+  margin: 10px 0 20px -10px;
+}
+
+.parts-input {
+  transform: scale(1, 2);
+  margin-top: 50px;
+}
+
+.parts-list-message {
+  margin-top: 50px;
+}
+
+@media (min-width: 1000px)
+{
+  table.parts-list {
+    font-size: medium;
+    th.parts-list, td.parts-list {
+      border-bottom: solid 0;
+      height: 0;
+    }
+  }
+  
+  .fa-file-pdf {
+    color: red;
+  }
+
+  .parts-input {
+    transform: scale(1, 1);
+  }
+
+  .parts-list-message {
+    margin-top: 150px;
+  }
+}
