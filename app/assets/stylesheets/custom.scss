@@ -3,10 +3,10 @@
 
 /* universal */
 
-.container {
-  width: 100%;
-  max-width: 100%;
-}
+// .container {
+//   width: 100%;
+//   max-width: 100%;
+// }
 .navbar-dark {
   background-color: #2E3F66;
 }
@@ -62,9 +62,18 @@ p {
   line-height: 1.7em;
 }
 
-.btn-primary {
+.btn-secondary {
   background-color: #2E3F66;
   border-color: #2E3F66;
+  color: #fff;
+}
+
+.devise-links {
+  margin-bottom: 10px;
+}
+
+.devise-new {
+  margin-bottom: 20px;
 }
 
 /* header */
