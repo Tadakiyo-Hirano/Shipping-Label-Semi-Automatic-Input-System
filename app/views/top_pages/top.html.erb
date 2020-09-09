@@ -1,3 +1,19 @@
 <%= current_user.email %><br>
 <%= current_user.provider %><br>
 <%= current_user.uid %><br>
+<div class="container container-top">
+  <div class="col col-md-6 offset-3 login-top">
+    <% unless user_signed_in? %>
+      <div class="center jumbotron">
+        <p>
+          <i class="fas fa-cubes"></i>
+          テスト
+        </p>
+        <%= render 'users/sessions/new' %>
+        <div class="admin-link"><%= link_to "", "#", class: "fas fa-user-cog fa-lg" %></div>
+      </div>
+    <% else %>
+      <h1>ログイン中です。</h1>
+    <% end %>
+  </div>
+</div>

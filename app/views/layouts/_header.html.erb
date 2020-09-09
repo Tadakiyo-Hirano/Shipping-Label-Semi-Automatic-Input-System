@@ -6,6 +6,7 @@
         <li><%= link_to "一覧編集", products_path %></li>
         <li><%= link_to "Top", root_path %></li>
         <li><%= link_to "Log in", parts_lists_path %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete if user_signed_in? %></li>
       </ul>
     </nav>
   </div>
