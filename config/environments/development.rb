@@ -64,4 +64,6 @@ Rails.application.configure do
   config.reload_classes_only_on_change = false
 
   config.hosts.clear
+  
+  config.web_console.whitelisted_ips = '172.24.0.1'
 end
