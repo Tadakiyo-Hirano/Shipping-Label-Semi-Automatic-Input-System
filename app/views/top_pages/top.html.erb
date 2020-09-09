@@ -1,3 +1,3 @@
-<h1>
-  <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path %>
-</h1>
+<%= current_user.email %><br>
+<%= current_user.provider %><br>
+<%= current_user.uid %><br>
