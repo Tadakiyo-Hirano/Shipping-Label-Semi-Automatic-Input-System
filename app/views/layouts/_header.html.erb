@@ -1,13 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-right">
   <div class="container">
-    <%= link_to "Husqvarna Partslist", '#', id: "logo" %>
-    <nav>
+    <% if user_signed_in? %>
+      <%= link_to "Husqvarna Partslist", root_path, id: "logo" %>
+    <% else %>
+      <%= link_to "Husqvarna Partslist", new_user_session_path, id: "logo" %>
+    <% end %>
+    <!-- <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "一覧編集", products_path %></li>
         <li><%= link_to "Top", root_path %></li>
         <li><%= link_to "Log in", parts_lists_path %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete if user_signed_in? %></li>
       </ul>
-    </nav>
+    </nav> -->
   </div>
 </header>

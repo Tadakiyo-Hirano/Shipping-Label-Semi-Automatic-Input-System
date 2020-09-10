@@ -35,6 +35,67 @@ textarea {
   margin-bottom: 10px;
 }
 
+.btn-secondary {
+  background-color: #2E3F66;
+  border-color: #2E3F66;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  opacity: .6;
+}
+
+.facebook-btn {
+  background-color: #3B5998;
+  border: #3B5998;
+}
+
+.facebook-btn:hover {
+  background-color: #3B5998;
+  border: #3B5998;
+  opacity: .6;
+}
+
+.twitter-btn {
+  background-color: #1DA1F2;
+  border: #1DA1F2;
+  margin-top: -70px;
+}
+
+.twitter-btn:hover {
+  background-color: #1DA1F2;
+  border: #1DA1F2;
+  opacity: .6;
+}
+
+.google-btn {
+  background-color: #EA4335;
+  border: #EA4335;
+  margin-top: -110px;
+}
+
+.google-btn:hover {
+  background-color: #EA4335;
+  border: #EA4335;
+  opacity: .6;
+}
+
+
+.reset-btn {
+  margin-top: 10px;
+}
+
+.reset-form {
+  font-size: 1.5vh;
+}
+
+/* users/sign_up */
+
+.signup-new {
+  margin-bottom: 20px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,12 +121,6 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-}
-
-.btn-secondary {
-  background-color: #2E3F66;
-  border-color: #2E3F66;
-  color: #fff;
 }
 
 .devise-links {
