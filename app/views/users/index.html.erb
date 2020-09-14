@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col col-md-12 table-responsive table-hover table-users">
+    <table class="table">
+      <tr>
+        <th>User ID</th>
+        <th>e-mail</th>
+        <th>連携元</th>
+        <th>登録日</th>
+        <th></th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.uid %></td>
+          <td><%= user.email %></td>
+          <td><%= user.provider %></td>
+          <td><%= l(user.created_at, format: :long) %></td>
+          <td>
+            <%= link_to "削除", user_path(user),
+                                method: :delete,
+                                data: { confirm: "#{user.email}のアカウントを削除しますか？" } %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

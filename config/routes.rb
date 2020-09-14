@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
+  resources :users, only: %i(index destroy)
+
   # ログアウト用
   # devise_scope :users do
   #   delete :sign_out, to: 'devise/sessions#destroy', as: :destroy_user_session
