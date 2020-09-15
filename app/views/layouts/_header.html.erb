@@ -1,15 +1,15 @@
 <header class="navbar navbar-fixed-top navbar-right">
   <div class="container">
     <% if user_signed_in? %>
-      <%= link_to "Husqvarna Partslist", root_path, id: "logo" %>
+      <%= link_to "Husq Parts", root_path, id: "logo" %>
     <% else %>
-      <%= link_to "Husqvarna Partslist", new_user_session_path, id: "logo" %>
+      <%= link_to "Husq Parts", new_user_session_path, id: "logo" %>
     <% end %>
-    <nav>
+    <nav class="pc-display">
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li><%= link_to "一覧編集", products_path %></li>
-        <li><%= link_to "Top", root_path %></li>
-        <li><%= link_to "Log in", parts_lists_path %></li> -->
+        <li><%= link_to current_user.email, "#" %></li>
+        <li><%= link_to "一覧編集", products_path %></li>
+        <li><%= link_to "パーツ表", parts_lists_path %></li>
         <li><%= link_to "", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" if user_signed_in? %></li>
       </ul>
     </nav>

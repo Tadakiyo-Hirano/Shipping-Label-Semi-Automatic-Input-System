@@ -1,26 +1,63 @@
+<h2>登録アカウント</h2>
+
 <div class="container">
-  <div class="col col-md-12 table-responsive table-hover table-users">
-    <table class="table">
+  <div class="col col-md-12 table-users">
+    <table class="table table-responsive table-hover">
       <tr>
         <th>User ID</th>
         <th>e-mail</th>
-        <th>連携元</th>
+        <th>連携</th>
+        <th>直近ログイン</th>
+        <th>直近接続IP</th>
+        <th>前回接続IP</th>
+        <th>ログイン数</th>
         <th>登録日</th>
+        <th></th>
         <th></th>
       </tr>
       <% @users.each do |user| %>
         <tr>
           <td><%= user.uid %></td>
           <td><%= user.email %></td>
-          <td><%= user.provider %></td>
+          <td class="center"><%= user.provider %></td>
+          <td><%= l(user.current_sign_in_at, format: :long) unless user.current_sign_in_at == nil %></td>
+          <td><%= user.current_sign_in_ip %></td>
+          <td><%= user.last_sign_in_ip %></td>
+          <td class="center"><%= user.sign_in_count %></td>
           <td><%= l(user.created_at, format: :long) %></td>
+          <td>
+            <%= button_tag "", onclick: "clickBtn#{user.id}()", class: "fas fa-times-circle btn-del" %>
+          </td>
           <td>
             <%= link_to "削除", user_path(user),
                                 method: :delete,
-                                data: { confirm: "#{user.email}のアカウントを削除しますか？" } %>
+                                data: { confirm: "#{user.email}のアカウントを削除しますか？" },
+                                id: "del#{user.id}",
+                                class: "btn btn-sm btn-danger" %> 
+                                
+                                <script>
+                                  //初期表示は非表示
+                                  document.getElementById("del<%= user.id %>").style.visibility ="hidden";
+                                  
+                                  function clickBtn<%= user.id %>(){
+                                    const del = document.getElementById("del<%= user.id %>");
+                                  
+                                    if(del.style.visibility=="visible"){
+                                      // hiddenで非表示
+                                      del.style.visibility ="hidden";
+                                    }else{
+                                      // visibleで表示
+                                      del.style.visibility ="visible";
+                                    }
+                                  }
+                                  </script>       
           </td>
         </tr>
       <% end %>
     </table>
   </div>
 </div>
+
+
+
+

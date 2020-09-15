@@ -3,15 +3,27 @@
 
 /* universal */
 
-// .container {
-//   width: 100%;
-//   max-width: 100%;
-// }
-.navbar-dark {
-  background-color: #2E3F66;
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+  .pc-display {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .pc-display {
+    display: none;
+  }
 }
 
 .navbar-right {
+  a {
+    color: #fff;
+  }
+  background-color: #2E3F66;
+}
+
+.navbar-nav > li > a:hover {
   background-color: #2E3F66;
 }
 
@@ -81,19 +93,12 @@ textarea {
   opacity: .6;
 }
 
-
 .reset-btn {
   margin-top: 10px;
 }
 
 .reset-form {
   font-size: 1.5vh;
-}
-
-/* users/sign_up */
-
-.signup-new {
-  margin-bottom: 20px;
 }
 
 /* typography */
@@ -138,7 +143,7 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -147,4 +152,19 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+/* flash */
+
+.notice {
+  color: white;
+  background-color: #28a745;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert {
+  color: white;
+  background-color: #dc3545;
 }
