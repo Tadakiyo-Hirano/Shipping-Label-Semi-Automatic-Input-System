@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:success] = "#{@product.name}を登録しました。"
+      flash[:notice] = "#{@product.name}を登録しました。"
       redirect_to products_url
     else
       render :new
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update_attributes(product_params)
-      flash[:success] = "#{@product.name}を編集しました。"
+      flash[:notice] = "#{@product.name}を編集しました。"
       redirect_to products_url
     else
       render :edit
@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    flash[:danger] = "#{@product.name}を削除しました。"
+    flash[:alert] = "#{@product.name}を削除しました。"
     redirect_to products_url
   end
 

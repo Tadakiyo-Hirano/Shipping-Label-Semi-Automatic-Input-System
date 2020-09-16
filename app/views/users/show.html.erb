@@ -1,0 +1,26 @@
+<% provide(:title, current_user.email) %>
+
+<h2>ユーザー情報</h2>
+
+<div class="container">
+  <div class="col col-md-12 table-user">
+    <table class="table table-responsive">
+      <tr>
+        <td>e-mail</td>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <td>連携</td>
+        <td><%= current_user.provider %></td>
+      </tr>
+      <tr>
+        <td>前回ログイン</td>
+        <td><%= l(current_user.current_sign_in_at, format: :long) unless current_user.current_sign_in_at == nil %></td>
+      </tr>
+      <tr>
+        <td>登録日</td>
+        <td><%= l(current_user.created_at, format: :long) %></td>
+      </tr>
+    </table>
+  </div>
+</div>

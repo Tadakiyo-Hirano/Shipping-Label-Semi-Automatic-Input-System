@@ -1,7 +1,6 @@
-
 <div class="btn-toolbar">
   <div class="btn-edit btn-group">
-    <%= link_to "登録", new_product_path, class: "btn btn-primary" %>
+    <%= link_to "登録", new_product_path, class: "btn btn-secondary" %>
   </div>
 
   <%= form_with url: products_path, method: :get, local: true do |f| %>
@@ -9,14 +8,14 @@
       <div class="input-group input-group">
         <%= f.text_field :name, class: "form-control" %>
         <div class="input-group-btn">
-          <%= f.submit "検索", class: "btn btn-primary " %>
+          <%= f.submit "検索", class: "btn btn-secondary" %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 
-<table class="table table-responsive table-bordered table-hover">
+<table class="table table-responsive table-hover">
   <% unless @products.blank? %>
     <thead>
       <tr>
@@ -34,14 +33,18 @@
     <tbody>
       <tr>
         <td><%= product.name %></td>
-        <td><%= link_to "編集", edit_product_path(product), class: "btn btn-success" %></td>
+        <td>
+          <!-- 編集 -->
+          <%= link_to "", edit_product_path(product), class: "fas fa-edit fa-lg" %>
+        </td>
         <td><%= product.serial %></td>
         <td><%= product.url %></td>
         <td>
-          <%= link_to "削除", product_path(product),
+          <!-- 削除 -->
+          <%= link_to "", product_path(product),
                               method: :delete,
                               data: { confirm: "#{product.name}のデータを削除します。"},
-                              class: "btn btn-danger" %>
+                              class: "fas fa-times-circle fa-lg" %>
         </td>
       </tr>
     </tbody>

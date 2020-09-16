@@ -7,7 +7,7 @@
     <% end %>
     <nav class="pc-display">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to current_user.email, "#" %></li>
+        <li><%= link_to current_user.email, "#" if user_signed_in? %></li>
         <li><%= link_to "一覧編集", products_path %></li>
         <li><%= link_to "パーツ表", parts_lists_path %></li>
         <li><%= link_to "", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" if user_signed_in? %></li>

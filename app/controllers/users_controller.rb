@@ -4,6 +4,9 @@ class UsersController < ApplicationController
     @users = User.all.order(created_at: :desc)
   end
 
+  def show
+  end
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy
