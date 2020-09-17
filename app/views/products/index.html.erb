@@ -1,18 +1,20 @@
-<div class="btn-toolbar">
-  <div class="btn-edit btn-group">
-    <%= link_to "登録", new_product_path, class: "btn btn-secondary" %>
-  </div>
 
-  <%= form_with url: products_path, method: :get, local: true do |f| %>
-    <div class="col col-md-3 btn-group">
-      <div class="input-group input-group">
-        <%= f.text_field :name, class: "form-control" %>
-        <div class="input-group-btn">
-          <%= f.submit "検索", class: "btn btn-secondary" %>
-        </div>
+<%= form_with url: products_path, method: :get, local: true do |f| %>
+  <div class="col col-md-4 search-form"">
+    <div class="input-group input-group">
+      <%= f.text_field :name, class: "form-control" %>
+      <div class="input-group-btn">
+        <%= f.submit "検索", class: "btn btn-secondary" %>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
+
+<div class="col col-md-12">
+  <div class="btn-product-new">
+    <!-- 登録 -->
+    <%= link_to "", new_product_path, class: "fas fa-plus-circle fa-lg" %>
+  </div>
 </div>
 
 <table class="table table-responsive table-hover">
@@ -27,8 +29,13 @@
       </tr>
     </thead>
   <% else %>
-    <h1>型式の登録がありません。<%= link_to "", products_path,class: "fas fa-undo-alt" %></h1>
+    <tbody>
+      <tr>
+        <td class="search-none-message"><%= link_to "登録型式がありません。", products_path, class: "fa-lg" %><%= link_to "", parts_lists_path, class: "fas fa-backspace fa-lg" %></td>
+      </tr>
+    </tbody>
   <% end %>
+  
   <% @products.each do |product| %>
     <tbody>
       <tr>

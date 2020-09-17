@@ -1,17 +1,24 @@
 <header class="navbar navbar-fixed-top navbar-right">
   <div class="container">
     <% if user_signed_in? %>
-      <%= link_to "Husq Parts", root_path, id: "logo" %>
+      <%= link_to "Husq Parts", parts_lists_path, id: "logo" %>
     <% else %>
       <%= link_to "Husq Parts", new_user_session_path, id: "logo" %>
     <% end %>
-    <nav class="pc-display">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to current_user.email, "#" if user_signed_in? %></li>
+
+    <% if user_signed_in? %>
+    <nav class="nav navbar-nav navbar-right">
+      <ul class="pc-display">
+        <li><%= link_to current_user.email, user_path(current_user) %></li>
         <li><%= link_to "一覧編集", products_path %></li>
         <li><%= link_to "パーツ表", parts_lists_path %></li>
-        <li><%= link_to "", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" if user_signed_in? %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      </ul>
+      <ul class="mobile-display">
+        <li><%= link_to "", user_path(current_user), class: "fas fa-user-circle" %></li>
+        <li><%= link_to "", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %></li>
       </ul>
     </nav>
+    <% end %>
   </div>
 </header>

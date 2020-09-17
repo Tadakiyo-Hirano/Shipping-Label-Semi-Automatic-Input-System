@@ -16,11 +16,58 @@
   }
 }
 
+@media screen and (min-width:480px) { 
+  /*　for iPhone Landscape　(iPhone 横)　*/
+
+}
+@media screen and (min-width:768px) and ( max-width:1024px) {
+  /*　for iPad 　*/
+  .pc-display {
+    display: none;
+  }
+}
+@media screen and (min-width:1024px) {
+  /*　for PC　*/
+  .mobile-display {
+    display: none;
+  }
+}
+
+.gnav {
+  flex-direction: column;
+}
+
+nav .pc-display li {
+  list-style: none;
+  float: left;
+  line-height: 50px;
+  margin-right: 20px;
+}
+
+nav .pc-display li a:hover {
+  text-decoration: none;
+}
+
 .navbar-right {
   a {
     color: #fff;
   }
   background-color: #2E3F66;
+}
+
+nav ul.mobile-display {
+  float: right;
+}
+
+
+nav .mobile-display li {
+  list-style: none;
+  float: left;
+  margin: 10px 30px 0 0;
+}
+
+nav .mobile-display li a:hover {
+  text-decoration: none;
 }
 
 .navbar-nav > li > a:hover {
