@@ -1,4 +1,5 @@
 class PartsListsController < ApplicationController
+  
   def index
     @products = Product.all
     if params[:name].present?
