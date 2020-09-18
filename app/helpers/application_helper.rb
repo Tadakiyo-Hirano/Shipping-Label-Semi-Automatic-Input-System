@@ -8,4 +8,8 @@ module ApplicationHelper
       page_name + " | " + base_title
     end
   end
+
+  def search_name
+    params[:name].present?
+  end
 end
