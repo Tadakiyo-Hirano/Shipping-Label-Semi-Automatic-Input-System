@@ -9,6 +9,10 @@
   </div>
 <% end %>
 
+<div class="col col-md-8 paginate-parts-list">
+  <%= paginate @products unless search_name %>
+</div>
+
 <table class="table parts-list table-responsive table-hover">
   <% unless @products.blank? %>
     <thead>

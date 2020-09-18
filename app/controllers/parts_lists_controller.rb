@@ -4,7 +4,7 @@ class PartsListsController < ApplicationController
     if params[:name].present?
       @products = Product.where('name LIKE ?', "%#{params[:name]}%")
     else
-      @products = Product.all
+      @products = Product.all.page(params[:page])
     end
   end
 end
