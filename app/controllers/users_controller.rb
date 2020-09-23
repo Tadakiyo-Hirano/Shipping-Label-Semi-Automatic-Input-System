@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user! # 追記 (userの部分はmodel名)
 
   def index
     @users = User.all.order(created_at: :desc)

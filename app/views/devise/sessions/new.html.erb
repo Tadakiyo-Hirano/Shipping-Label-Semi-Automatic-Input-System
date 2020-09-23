@@ -1,5 +1,5 @@
 <div class="col col-md-6 col-md-offset-3">
-  <h2>ログイン</h2>
+  <h2>ログイン</h2><%= current_admin&.email %><%= current_user&.email %>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field devise-new">
