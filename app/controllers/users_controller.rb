@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user! # 追記 (userの部分はmodel名)
+  before_action :authenticate_admin!, only: %i(index destroy) # 追記 (userの部分はmodel名)
+  before_action :authenticate_user!, only: %i(show)
 
   def index
     @users = User.all.order(created_at: :desc)
