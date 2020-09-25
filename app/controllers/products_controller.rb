@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i(edit update destroy)
-  before_action :authenticate_user! # 追記 (userの部分はmodel名)
+  before_action :authenticate_admin!
 
   def index
     @products = Product.all
