@@ -1,5 +1,5 @@
 class PartsListsController < ApplicationController
-  before_action :authenticate_user! # 追記 (userの部分はmodel名)
+  before_action :user_and_admin_signed_in?
   
   def index
     @products = Product.all
@@ -10,3 +10,11 @@ class PartsListsController < ApplicationController
     end
   end
 end
+
+private
+
+  def user_and_admin_signed_in?
+    unless user_signed_in? || admin_signed_in?
+      redirect_to new_user_session_path
+    end
+  end
