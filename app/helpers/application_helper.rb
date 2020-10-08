@@ -9,6 +9,16 @@ module ApplicationHelper
     end
   end
 
+  def header_logo_link
+    if user_signed_in?
+      parts_lists_path
+    elsif admin_signed_in?
+      parts_lists_path
+    else
+      new_user_session_path
+    end
+  end
+
   def search_name
     params[:name].present?
   end

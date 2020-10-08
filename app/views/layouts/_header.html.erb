@@ -1,12 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-right">
   <div class="container">
-    <% if user_signed_in? %>
-      <%= link_to "Husq Parts", parts_lists_path, id: "logo" %>
-    <% elsif admin_signed_in? %>
-    <%= link_to "Husq Parts", products_path, id: "logo" %>
-    <% else %>
-      <%= link_to "Husq Parts", new_user_session_path, id: "logo" %>
-    <% end %>
+    <%= link_to "Husq Parts", header_logo_link, id: "logo" %>
 
     <% if user_signed_in? %>
       <nav class="nav navbar-nav navbar-right">
@@ -27,7 +21,8 @@
         <ul class="pc-display">
           <li><%= link_to "パーツ表", parts_lists_path %></li>
           <li><%= link_to "編集", products_path %></li>
-          <li><%= link_to "登録アカウント一覧", users_path %></li>
+          <li><%= link_to "登録者一覧", users_path %></li>
+          <li><%= link_to "管理者情報", '#' %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         </ul>
         <ul class="mobile-display">

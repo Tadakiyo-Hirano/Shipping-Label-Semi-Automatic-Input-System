@@ -5,7 +5,7 @@ class Admins::SessionsController < Devise::SessionsController
 
   # ログイン後のリダイレクト先
   def after_sign_in_path_for(resource)
-    users_path
+    parts_lists_url
   end 
   
   #ログアウト後のリダイレクト先
