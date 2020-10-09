@@ -175,6 +175,10 @@ p {
   line-height: 1.7em;
 }
 
+.confirmations_message {
+  margin: -25px 0 20px 3px;
+}
+
 .devise-links {
   margin-bottom: 10px;
 }
@@ -225,4 +229,26 @@ p {
   background-color: #2E3F66;
   border-color: #2E3F66;
   opacity: .6;
+}
+
+/* field_with_errors */
+
+.field_with_errors input {
+  border: 2px solid #d9534f;
+}
+
+.field_with_errors select {
+  border: 2px solid #d9534f;
+}
+
+.field_with_errors input:focus {
+  border: 2px solid #d9534f;
+}
+
+.field_with_errors input:select {
+  border: 2px solid #d9534f;
+}
+
+.field_with_errors textarea {
+  border: 2px solid #d9534f;
 }

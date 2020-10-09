@@ -1,0 +1,41 @@
+ja:
+  activerecord:
+    models:
+      admin:
+      user:
+      product:
+    attributes:
+      admin:
+        email: メールアドレス
+        encrypted_password: パスワード
+        reset_password_token: パスワードトークンをリセット
+        reset_password_sent_at: 送信されたパスワードのリセット
+        remember_created_at: ログイン情報を記憶
+        created_at: 登録日
+        updated_at: 更新日
+      user:
+        email: メールアドレス
+        encrypted_password: パスワード
+        reset_password_token: パスワードトークンをリセット
+        reset_password_sent_at: 送信されたパスワードのリセット
+        remember_created_at: ログイン情報を記憶
+        sign_in_count: ログイン回数
+        current_sign_in_at: 直近ログイン
+        last_sign_in_at: 最終ログイン
+        current_sign_in_ip: 直近接続IP
+        last_sign_in_ip: 最終接続IP
+        confirmation_token: 認証トークン
+        confirmed_at: 認証日時
+        confirmation_sent_at: 送信された認証日時
+        unconfirmed_email: 未確認のメール
+        provider: 連携
+        uid: ユーザーID
+        created_at: 登録日
+        updated_at: 更新日
+      product:
+        name: 型式
+        serial: シリアル番号
+        url: URL
+        created_at: 登録日
+        updated_at: 更新日
+        

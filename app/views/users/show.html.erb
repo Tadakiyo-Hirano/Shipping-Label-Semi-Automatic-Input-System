@@ -6,19 +6,19 @@
   <div class="col col-md-12 table-user">
     <table class="table table-responsive">
       <tr>
-        <td>e-mail</td>
+        <td><%= User.human_attribute_name :email %></td>
         <td><%= current_user.email %></td>
       </tr>
       <tr>
-        <td>連携</td>
+        <td><%= User.human_attribute_name :provider %></td>
         <td><%= provider %></td>
       </tr>
       <tr>
-        <td>前回ログイン</td>
+        <td><%= User.human_attribute_name :current_sign_in_at %></td>
         <td><%= l(current_user.current_sign_in_at, format: :long) unless current_user.current_sign_in_at == nil %></td>
       </tr>
       <tr>
-        <td>登録日</td>
+        <td><%= User.human_attribute_name :created_at %></td>
         <td><%= l(current_user.created_at, format: :long) %></td>
       </tr>
     </table>

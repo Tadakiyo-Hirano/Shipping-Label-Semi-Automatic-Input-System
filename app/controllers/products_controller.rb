@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "#{@product.name}を登録しました。"
       redirect_to products_url
     else
+      flash[:alert] = @product.errors.full_messages.join("<br>").html_safe
       render :new
     end
   end
@@ -34,6 +35,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "#{@product.name}を編集しました。"
       redirect_to products_url
     else
+      flash[:alert] = @product.errors.full_messages.join("<br>").html_safe
       render :edit
     end
   end

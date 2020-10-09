@@ -17,9 +17,9 @@
   <% unless @products.blank? %>
     <thead>
       <tr>
-        <th class="parts-list">型式</th>
-        <th class="parts-list"></th>
-        <th class="parts-list">シリアル番号</th>
+        <th class="parts-list"><%= Product.human_attribute_name :name %></th>
+        <th class="parts-list">PDF</th>
+        <th class="parts-list"><%= Product.human_attribute_name :serial %></th>
       </tr>
     </thead>
   <% else %>
