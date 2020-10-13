@@ -1,0 +1,18 @@
+<table class="table table-responsive table-hover">
+  <% @markets.each do |market| %>
+    <thead>
+      <tr>
+        <th></th>
+        <th><%= Market.human_attribute_name :name %></th>
+        <th><%= Market.human_attribute_name :code %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= link_to "", edit_market_path(market), class: "fas fa-edit" %></td>
+        <td><%= market.name %></td>
+        <td><%= market.code %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
