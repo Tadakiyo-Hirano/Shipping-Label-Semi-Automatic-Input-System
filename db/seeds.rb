@@ -13,3 +13,10 @@ Admin.create!(
 )
 
 puts 'admin create!'
+
+Market.create!(
+   name: 'sample',
+   code: 'AAA-111'
+)
+
+puts 'market create!'
